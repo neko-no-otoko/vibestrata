@@ -1,0 +1,91 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui;
+}
+body {
+  margin: 0;
+  background: #090c17;
+  color: #f5f7ff;
+}
+.app {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  padding: 18px;
+  height: 100vh;
+  box-sizing: border-box;
+}
+.glass {
+  background: rgba(18, 22, 38, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  border-radius: 18px;
+}
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-image: linear-gradient(150deg, #090c17, #141a2e);
+  transition: background-image 650ms ease;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+.topbar h1, .side h2 { margin: 0; }
+.topbar p { margin: 2px 0 0; opacity: .8; }
+.metric { font-weight: 600; }
+.messages {
+  flex: 1;
+  overflow: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.bubble {
+  padding: 12px 14px;
+  border-radius: 14px;
+  max-width: 70%;
+  backdrop-filter: blur(32px);
+  border: 1px solid rgba(255, 255, 255, .14);
+}
+.bubble.self { align-self: flex-end; }
+.bubble.other { align-self: flex-start; }
+.bubble.dark {
+  background: rgba(11, 15, 22, .75);
+  color: #f8fbff;
+}
+.bubble.light {
+  background: rgba(226, 236, 255, .3);
+  color: #09111f;
+}
+.composer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  padding: 14px;
+}
+.composer input, .composer button {
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(17, 22, 38, 0.6);
+  color: inherit;
+  padding: 10px 12px;
+}
+.side { padding: 16px; overflow: auto; }
+.muted { opacity: .75; }
+.history { display: grid; gap: 10px; margin-bottom: 20px; }
+.history-card {
+  border-radius: 12px;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,.12);
+  min-height: 72px;
+}
+.pipeline ul { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 6px; }
+@media (max-width: 920px){
+  .app { grid-template-columns: 1fr; height: auto; min-height: 100vh; }
+}
