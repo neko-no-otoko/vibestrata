@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VibeStrata</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="chat-panel glass" id="canvas">
+        <header class="topbar">
+          <div>
+            <h1>VibeStrata</h1>
+            <p id="engineStatus">Engine idle</p>
+          </div>
+          <div class="metric">Vibe Delta: <span id="delta">0.00</span></div>
+        </header>
+
+        <div class="messages" id="messages"></div>
+
+        <form id="composer" class="composer">
+          <input id="messageInput" placeholder="Type a message to shift the vibe..." autocomplete="off" />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+
+      <aside class="side glass">
+        <h2>Vibe History</h2>
+        <p class="muted">Time-lapse of generated scenes and trigger snippets.</p>
+        <div id="history" class="history"></div>
+
+        <div class="pipeline">
+          <h3>Pipeline status</h3>
+          <ul>
+            <li>Extraction: <span id="extraction">Ready</span></li>
+            <li>Local sketch: <span id="local">Ready</span></li>
+            <li>Cloud texture: <span id="cloud">Disconnected</span></li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
